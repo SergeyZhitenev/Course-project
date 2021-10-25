@@ -33,7 +33,8 @@ public class Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         ObservableList<Shape> content= FXCollections.observableArrayList(new FactoryLine().CreateArrow(canvas),new FactoryAssotioon().CreateArrow(canvas),
-                new FactoryDependence().CreateArrow(canvas), new FactoryGeneralization().CreateArrow(canvas));
+                new FactoryDependence().CreateArrow(canvas), new FactoryGeneralization().CreateArrow(canvas),
+                new Sign(),new EmergencyExit(),new OtherExit(),new Stairs());
         LV.setItems(content);
         LV.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         LV.setCellFactory(new Callback<ListView<Shape>, ListCell<Shape>>() {
@@ -58,8 +59,10 @@ public class Controller implements Initializable {
                 arrows.setValue(currentarrow.toString());
             }
         });
-        arrows.getItems().addAll("линия","сплошная стрелка", "пунктирная стрелка", "основная стрелка");
-        arrows.setValue("линия");
+        for (var a:content) {
+        arrows.getItems().add(a.toString());
+        }
+        arrows.setValue(content.get(0).toString());
         arrows.getSelectionModel().selectedIndexProperty().addListener( new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {

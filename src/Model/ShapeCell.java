@@ -17,7 +17,7 @@ public class ShapeCell extends ListCell<Shape> {// класс Product
 
             Canvas cnv=new Canvas();
 
-            cnv.setHeight(30);// задание размера элемента отображения
+            cnv.setHeight(45);// задание размера элемента отображения
 
             cnv.setWidth(120);
 
@@ -27,7 +27,7 @@ public class ShapeCell extends ListCell<Shape> {// класс Product
             item1.setStartY(10);
             item1.setStartX(15);
             item1.setEndX(120);
-            item1.setEndY(10);
+            item1.setEndY(30);
             item1.draw(gr); // ее отрисовка на канве
             System.out.println(item1);
             setGraphic(cnv); //установка канвы вместо cell

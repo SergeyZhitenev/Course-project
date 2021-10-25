@@ -14,7 +14,7 @@
       <VBox prefHeight="375.0" prefWidth="159.0" BorderPane.alignment="CENTER">
          <children>
             <ChoiceBox fx:id="arrows" prefWidth="150.0" />
-            <Label text="Цвеет">
+            <Label text="Цвет стрелок">
                <VBox.margin>
                   <Insets left="11.0" top="5.0" />
                </VBox.margin>
